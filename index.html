@@ -1,38 +1,57 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <meta charset="utf-8" />
-  <title>Young Innovators STEM Lab</title>
-  <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+  <title>VR Furniture Room</title>
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
 </head>
 
 <body>
-  <a-scene>
 
-    <a-sky color="skyblue"></a-sky>
-    <a-box position="-1 -0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-    <a-sphere position="0 0.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-    <a-cylinder position="1 -0.25 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-    <a-plane position="0 -1 -4" rotation="-90 0 0" width="10" height="10" color="#7BC8A4"></a-plane>
-    
-    <!-- <a-image src="https://raw.githubusercontent.com/alluringxstalwart/SourceYISL/main/Landscape.png" position="0 5 -10"
-      width="25" height="7.5"></a-image> -->
+<a-scene>
 
-    <a-text value="Young Innovators STEM Lab" position="0 9.5 -10" align="center" color="white" font="mozillavr"
-      width="10" height="5" anchor="center">
-    </a-text>
+  <!-- Sky -->
+  <a-sky color="#ECECEC"></a-sky>
 
-    <!-- Load the image -->
-    <a-assets>
-      <img id="sky" src="https://images.pexels.com/photos/163405/munich-olympia-mountain-olympic-stadium-view-163405.jpeg?_gl=1*1anu4nh*_ga*Njc2MTkzOTQyLjE3NzI3ODAyNzg.*_ga_8JE65Q40S6*czE3NzI3ODAyNzgkbzEkZzEkdDE3NzI3ODA2NDAkajQxJGwwJGgw">
-    </a-assets>
+  <!-- Floor -->
+  <a-plane 
+      rotation="-90 0 0" 
+      width="10" 
+      height="10" 
+      color="#7BC8A4">
+  </a-plane>
 
-    <!-- Display 360 image -->
-    <a-sky src="#sky"></a-sky>
+  <!-- Walls -->
+  <a-box position="0 2 -5" width="10" height="4" depth="0.2" color="#FFFFFF"></a-box>
+  <a-box position="-5 2 0" width="0.2" height="4" depth="10" color="#FFFFFF"></a-box>
+  <a-box position="5 2 0" width="0.2" height="4" depth="10" color="#FFFFFF"></a-box>
 
+  <!-- Sofa -->
+  <a-entity 
+      gltf-model="models/sofa.glb"
+      position="0 0 -3"
+      scale="1 1 1">
+  </a-entity>
 
-  </a-scene>
+  <!-- Table -->
+  <a-entity 
+      gltf-model="models/table.glb"
+      position="0 0 -1"
+      scale="1 1 1">
+  </a-entity>
+
+  <!-- Chair -->
+  <a-entity 
+      gltf-model="models/chair.glb"
+      position="2 0 -2"
+      scale="1 1 1">
+  </a-entity>
+
+  <!-- Camera -->
+  <a-entity position="0 1.6 3">
+      <a-camera wasd-controls look-controls></a-camera>
+  </a-entity>
+
+</a-scene>
+
 </body>
-
 </html>
