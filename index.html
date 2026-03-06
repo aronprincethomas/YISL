@@ -7,49 +7,53 @@
 
 <body>
 
-<a-scene>
+<a-scene shadow="type: pcfsoft">
 
-  <!-- Sky -->
-  <a-sky color="#ECECEC"></a-sky>
+<!-- Sky -->
+<a-sky color="#d9e6f2"></a-sky>
 
-  <!-- Floor -->
-  <a-plane 
-      rotation="-90 0 0" 
-      width="10" 
-      height="10" 
-      color="#7BC8A4">
-  </a-plane>
+<!-- Floor -->
+<a-plane rotation="-90 0 0" width="12" height="12" color="#d9d9d9"></a-plane>
 
-  <!-- Walls -->
-  <a-box position="0 2 -5" width="10" height="4" depth="0.2" color="#FFFFFF"></a-box>
-  <a-box position="-5 2 0" width="0.2" height="4" depth="10" color="#FFFFFF"></a-box>
-  <a-box position="5 2 0" width="0.2" height="4" depth="10" color="#FFFFFF"></a-box>
+<!-- Walls -->
+<a-box position="0 2 -6" width="12" height="4" depth="0.2" color="#ffffff"></a-box>
+<a-box position="-6 2 0" width="0.2" height="4" depth="12" color="#ffffff"></a-box>
+<a-box position="6 2 0" width="0.2" height="4" depth="12" color="#ffffff"></a-box>
 
-  <!-- Sofa -->
-  <a-entity 
-      gltf-model="models/sofa.glb"
-      position="0 0 -3"
-      scale="1 1 1">
-  </a-entity>
+<!-- Sofa -->
+<a-box position="0 0.5 -3" depth="1" height="1" width="3" color="#3f51b5"></a-box>
+<a-box position="0 1 -3.4" depth="0.2" height="1" width="3" color="#303f9f"></a-box>
+<a-box position="-1.4 0.8 -3" depth="1" height="1" width="0.2" color="#303f9f"></a-box>
+<a-box position="1.4 0.8 -3" depth="1" height="1" width="0.2" color="#303f9f"></a-box>
 
-  <!-- Table -->
-  <a-entity 
-      gltf-model="models/table.glb"
-      position="0 0 -1"
-      scale="1 1 1">
-  </a-entity>
+<!-- Coffee Table -->
+<a-box position="0 0.3 -1.8" depth="1" height="0.1" width="1.5" color="#8b5a2b"></a-box>
 
-  <!-- Chair -->
-  <a-entity 
-      gltf-model="models/chair.glb"
-      position="2 0 -2"
-      scale="1 1 1">
-  </a-entity>
+<!-- Table Legs -->
+<a-cylinder position="0.6 0.15 -1.4" radius="0.05" height="0.3" color="#654321"></a-cylinder>
+<a-cylinder position="-0.6 0.15 -1.4" radius="0.05" height="0.3" color="#654321"></a-cylinder>
+<a-cylinder position="0.6 0.15 -2.2" radius="0.05" height="0.3" color="#654321"></a-cylinder>
+<a-cylinder position="-0.6 0.15 -2.2" radius="0.05" height="0.3" color="#654321"></a-cylinder>
 
-  <!-- Camera -->
-  <a-entity position="0 1.6 3">
-      <a-camera wasd-controls look-controls></a-camera>
-  </a-entity>
+<!-- Chair -->
+<a-box position="2 0.4 -2" depth="0.8" height="0.1" width="0.8" color="#795548"></a-box>
+<a-box position="2 1 -2.3" depth="0.1" height="1" width="0.8" color="#5d4037"></a-box>
+
+<!-- Lighting -->
+
+<!-- Ambient light -->
+<a-light type="ambient" intensity="0.6"></a-light>
+
+<!-- Main directional light -->
+<a-light type="directional" position="3 4 2" intensity="0.8"></a-light>
+
+<!-- Warm room light -->
+<a-light type="point" position="0 3 -2" intensity="0.5" color="#fff2cc"></a-light>
+
+<!-- Camera + Movement -->
+<a-entity position="0 1.6 4">
+  <a-camera wasd-controls look-controls></a-camera>
+</a-entity>
 
 </a-scene>
 
